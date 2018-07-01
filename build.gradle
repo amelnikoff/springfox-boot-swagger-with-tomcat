@@ -1,0 +1,43 @@
+buildscript {
+  ext {
+    springBootVersion = '1.5.14.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+def springFoxVersion = '2.9.2'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("io.springfox:springfox-petstore:$springFoxVersion")
+  compile("io.springfox:springfox-swagger2:$springFoxVersion")
+  compile("io.springfox:springfox-swagger-ui:$springFoxVersion")
+
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+
+
+
+
+
+
+
